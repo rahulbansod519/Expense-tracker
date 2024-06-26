@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tutorial Requests</title>
+    <!-- stylesheets -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- auth modals -->
+    <div class="auth open">
+      <div class="modal">
+        <h2>Login</h2>
+        <form class="login">
+          <input type="text" name="email" placeholder="Email" />
+          <input type="password" name="password" placeholder="Password" />
+          <button>Login</button>
+          <p class="error"></p>
+        </form>
+        <div>No account? <a class="switch">Register instead</a></div>
+      </div>
+      <div class="modal">
+        <h2>Register</h2>
+        <form class="register">
+          <input type="text" name="email" placeholder="Email" />
+          <input type="password" name="password" placeholder="Password" />
+          <button>Register</button>
+          <p class="error"></p>
+        </form>
+        <div>Got an account? <a class="switch">Login instead</a></div>
+      </div>
+    </div>
+
+    <!-- new request modal -->
+    <div class="new-request">
+      <div class="modal">
+        <h2>Add your Expense</h2>
+        <form>
+          <!-- <input type="text" name="request" placeholder="Request..." /> -->
+           <input type="number" name="amount" placeholder="amount">
+           <input type="text" name="description" placeholder="Description">
+           <input type="text" name="category" placeholder="Category">
+           <!-- <input type="date" name="date" placeholder="datetime"> -->
+          <button>Submit Expense</button>
+          <p class="error"></p>
+        </form>
+      </div>
+    </div>
+
+    <header>
+      <nav>
+        <a class="add-request">Add Expense</a>
+        <a class="sign-out">sign out</a>
+      </nav>
+    </header>
+
+    <section class="content">
+      <h1>Your Expnses</h1>
+      <ul class="request-list">
+        <li>
+          <span class="text">Category </span>
+          <span class="text">Amount</span> 
+          <span class="text">Description</span>
+          <span class="text">Date</span>
+        </li>
+      </ul>
+    </section>
+    <script src="/__/firebase/10.12.2/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script src="/__/firebase/10.12.2/firebase-auth-compat.js"></script>
+    <script src="/__/firebase/10.12.2/firebase-database-compat.js"></script>
+    <script src="/__/firebase/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="/__/firebase/10.12.2/firebase-functions-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script src="/__/firebase/init.js?useEmulator=false"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/expense.js"></script>
+  </body>
+</html>
